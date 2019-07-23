@@ -1,0 +1,11 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "resposive website portfolio",
+  "main": "index.js",
+  "scripts": {
+    "sass": "node-sass -w scss -o code/css/ --recursive "
+  },
+  "author": "rohit kumar",
+  "license": "ISC"
+}

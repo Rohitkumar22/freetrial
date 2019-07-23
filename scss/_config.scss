@@ -1,0 +1,70 @@
+$bkColor:#fff;
+$R:black;
+$second_clr:rgb(57, 136, 211);
+$show_homeimg:true;
+$home_img:url(../img/background.jpg);
+$opacity:0.8;
+
+@mixin easeout {
+    transition: all 1.0s ease-out;   
+}
+@mixin backgrd{
+    @if $show_homeimg 
+    {
+ &#bkimg{background-image: $home_img;
+    background-attachment: fixed;
+    background-size:cover ;
+&::after{
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background:rgba( $bkColor ,$opacity);
+    z-index:-1;
+}
+}
+
+}
+}
+@function settextcolor($color)
+{
+    @if (lightness($color)>40)
+    {
+        @return #000;
+    }
+    @else{
+        @return #fff;
+    }
+
+}
+//mediaqquery mixin
+@mixin mediaSm
+{
+    @media screen and(max-width: 500px)
+    {
+        @content;
+    }
+}
+
+
+@mixin mediaMd
+{
+    @media screen and(max-width: 769px)
+    {
+        @content;
+    }
+}
+@mixin mediaLg{
+    @media screen and (min-width:769px)and(max-width: 1170px)
+    {
+        @content;
+    }
+}
+@mixin mediaXl{
+    @media screen and(min-width: 1171px)
+    {
+        @content;
+    }
+}
